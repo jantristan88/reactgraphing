@@ -147,6 +147,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PropTypes from 'prop-types';
+import checkboxes from './checkboxes';
+import Checkbox from './Checkbox';
 
 class App extends Component {
 
