@@ -8,16 +8,28 @@ class App extends Component {
   state = {
     data: [],
     isLoading: false,
-    tabs: ['Republican', 'Democrat', 'Other'],
-    currentTab: 'Republican',
+    tabs: ['Republican', 'Democrat', 'Other','All'],
     showRepublicans: false,
     showDemocrats: true,
     showOther: true,
+    showAll: true,
     Party: '',
   }
 
   componentDidMount(){
     this.doFetch()
+  }
+
+  setCurrentTab = (tabName) => {
+    this.setState({
+      Party: tabName,
+    });
+  }
+
+  setCurrentTab2 = (tabName) => {
+    this.setState({
+      currentTab2: tabName,
+    });
   }
 
   toggleRepublicans() {
@@ -26,25 +38,36 @@ class App extends Component {
       showRepublicans: true,
       Party: 'Republican',
     })
-    console.log(this.state.showRepublicans);
-      // if (!this.props.)
-    // if this.state.showRepublicans === false
-    //   then set style="display: none"
-      // if this.state.showRepublicans === true
-      //   then set style
+
   }
 
   toggleDemocrats() {
     console.log('donkey');
     this.setState({
-      showDemocrats: !this.state.showDemocrats
+      showDemocrats: true,
+      Party: 'Democrat',
     })
   }
 
   toggleOthers() {
     console.log('leaf');
     this.setState({
-      showOther: !this.state.showOther
+      showOther: true,
+      Party: 'Other',
+    })
+  }
+
+  toggleAll() {
+    console.log('usa');
+    this.setState({
+      showAll: true,
+      Party: '',
+    })
+  }
+
+  dataFor(party){
+    return this.state.data.filter(function(item){
+      return item.Party === party
     })
   }
 
@@ -73,13 +96,17 @@ class App extends Component {
     return (
       <div className="Container">
         <div className="Container-img">
+          <Tabs
+            tabs={this.state.tabs}
+            currentTab={this.state.Party}
+            onChange={this.setCurrentTab.bind(this)} />
         </div>
         <div className="Container-title">
           <h1> Florida Voter Registration 1972-2016</h1>
         </div>
 
         <div className="Container-graph">
-          {this.state.data.map(function(entry){
+          {this.dataFor(this.state.Party).map(function(entry){
 
           const party = entry.Party;
           const number = entry.Number;
@@ -92,11 +119,7 @@ class App extends Component {
           
         </div>
 
-        <div>
-          <Tabs
-            tabs={this.state.tabs}
-            onChange={this.toggleRepublicans.bind(this)} />
-        </div>
+      
       
       </div>
 

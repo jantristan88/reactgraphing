@@ -1,7 +1,7 @@
 .Tabs {
-  /*display: flex;*/
-  grid-column:2;
-  grid-row:2;
+  display: flex;
+/*  grid-column:2;
+  grid-row:2;*/
 	border-bottom-color: rgb(72, 72, 72);
 	border-bottom-style: none;
 	border-bottom-width: 0px;
@@ -46,23 +46,23 @@
 
 .Tabs-tab {
 	border-bottom-color: rgb(72, 72, 72);
-	border-bottom-style: none;
-	border-bottom-width: 0px;
+	/*border-bottom-style: none;*/
+	/*border-bottom-width: 0px;*/
 	transition: 0.1s;
-	border-image-outset: 0px;
+	/*border-image-outset: 0px;*/
 	border-image-repeat: stretch;
 	border-image-slice: 100%;
-	border-image-source: none;
+	/*border-image-source: none;*/
 	border-image-width: 1;
 	border-left-color: rgb(72, 72, 72);
-	border-left-style: none;
-	border-left-width: 0px;
+	/*border-left-style: none;*/
+	/*border-left-width: 0px;*/
 	border-right-color: rgb(72, 72, 72);
 	border-right-style: none;
-	border-right-width: 0px;
+	/*border-right-width: 0px;*/
 	border-top-color: rgb(72, 72, 72);
-	border-top-style: none;
-	border-top-width: 0px;
+	/*border-top-style: none;*/
+	/*border-top-width: 0px;*/
 	box-sizing: border-box;
 	cursor: pointer;
 	font-size: 15px;
@@ -70,17 +70,17 @@
 	font-weight: 600;
 	height: 36px;
 	line-height: 36px;
-	margin-bottom: 0px;
+	/*margin-bottom: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
-	margin-top: 0px;
+	margin-top: 0px;*/
 	outline-color: rgb(72, 72, 72);
-	outline-style: none;
-	outline-width: 0px;
+	/*outline-style: none;*/
+	/*outline-width: 0px;
 	padding-bottom: 0px;
 	padding-left: 0px;
 	padding-right: 0px;
-	padding-top: 0px;
+	padding-top: 0px;*/
 	text-size-adjust: 100%;
 	user-select: none;
 	vertical-align: baseline;
